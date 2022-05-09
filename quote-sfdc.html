@@ -379,10 +379,9 @@ img {
 </head>
 <body class="order">
   <div class="header">
-
     <div class="logo" style="display:flex;">
-      <div class="logoleft" style="width:50%;"><img style="max-width: 90%;" src="https://cdn.shopify.com/s/files/1/0611/7398/9619/files/yourorder.png?v=1652058179"></div>
-      <div class="logoright" style="width:50%;"><img style="max-width: 85%;"src="https://cdn.shopify.com/s/files/1/0611/7398/9619/files/b2b.artsake_banner1.png?v=1652058179">
+      <div class="logoleft" style="width:50%;"><img style="max-width: 90%;" src="https://s3.amazonaws.com/cdn.artsake.com/images/"&ORDER.PDF_Order_logo__c></div>
+      <div class="logoright" style="width:50%;"><img style="max-width: 85%;"src="https://s3.amazonaws.com/cdn.artsake.com/images/artsake_b2b_banner.png">
       <div>
         <p class="paragraph-1"><strong>Artsake Canada Inc.<br></strong>460-2400 Chemin Lucerne<br>Mont-Royal, QC H3R 2J8 </p>
       </div>
@@ -397,51 +396,51 @@ img {
   </div>
   <div class="body">
     <div class="order-block">
-      <div class="order-number-title">ORDER #:</div>
-      <div class="order-number"><strong class="bold-text">1234</strong></div>
+      <div class="order-number-title">PDF_Stage__c&” #:”</div>
+      <div class="order-number"><strong class="bold-text">SUBSTITUTE(NAME, “PO-”,””)</strong></div>
     </div>
     <div class="date-block">
-      <div class="date-title">DATE:</div>
-      <div class="date"><strong class="bold-text-2">MM/DD/YYYY</strong></div>
+      <div class="date-title">DATE:</div>    
+<div class="date"><strong class="bold-text-2">PDF_Display_Date__c</strong></div>
     </div>
     <div class="columns" style="display:flex;">
     <div class="column1" style="width:33%;">
         <div class="account-block">
           <div class="account-title">ACCOUNT:</div>
-          <div class="account-address"><strong>Contact Name<br>Business Name<br>Street Address<br>City, State, Zip/Postal<br>1 (555) 555-5555</strong></div>
+          <div class="account-address"><strong>ORDER.PROJECT.CONTACT_PERSON.Firtsname&Lastname<br>ORDER.PROJECT.ACCOUNT.Name<br>ORDER.PROJECT.ACCOUNT.Billing_Street<br>ORDER.PROJECT.ACCOUNT.Billing_State_Prov&”, “ORDER.PROJECT.ACCOUNT.Billing_Zip<br>ORDER.PROJECT.ACCOUNT.Phone</strong></div>
         </div>
         <div class="project-name-block">
-          <div class="project-name-title">PROJECT NAME:</div>
-          <div><strong>Hospitality Project, Miami FL</strong></div>
+          <div class="project-name-title">PROJECT NAME:</div>
+          <div><strong>ORDER.Project_name__c&”, “&ORDER.City_State_Display__c</strong></div>
         </div>
         <div class="discount-block">
-          <div class="discount-title">DISCOUNT TYPE:</div>
-          <div class="discount"><strong>-30%</strong></div>
+          <div class="discount-title">DISCOUNT TYPE:</div>
+          <div class="discount"><strong>”-”&ORDER.Discount_Rate__c</strong></div>
         </div>
       </div>
       <div class="column2" style="width:33%;">
         <div class="shipping-block">
-          <div class="shipping-address-title">SHIPPING ADDRESS:</div>
-          <div class="shipping-address"><strong>Contact Name<br>Business Name<br>Street Address<br>City, State, Zip/Postal<br>1 (555) 555-5555</strong></div>
+          <div class="shipping-address-title">SHIPPING ADDRESS:</div>
+          <div class="shipping-address"><strong>ORDER.PROJECT.CONTACT_PERSON.Firtsname&Lastname<br>ORDER.PROJECT.ACCOUNT.Name<br>ORDER.PDF_City_State_Zip<br>ORDER.PROJECT.ACCOUNT.Phone</strong></div>
         </div>
         <div class="ship-date-block">
-          <div class="ship-date-title">SHIP DATE:</div>
-          <div class="ship-date"><strong>MM/DD/YYYY</strong></div>
+          <div class="ship-date-title">SHIP DATE:</div>
+          <div class="ship-date"><strong>TBD</strong></div>
         </div>
         <div class="checkbox-block">
           <input type="checkbox" id="dock" name="dock" value="dock">
-         <label for="dock">DOCK</label>
+         <label for="dock">DOCK</label> // NOT(ORDER.Tailgate__c)
           <input type="checkbox" id="tailgate" name="tailgate" value="tailgate">
-          <label for="tailgate">TAILGATE</label>
+          <label for="tailgate">TAILGATE</label>  //ORDER.Tailgate__c
         </div>
       </div>
       <div class="column3"  style="width:33%;">
         <div class="status-block">
           <div class="status-title">STATUS:</div>
-          <div class="status"><strong>IN PRODUCTION</strong></div>
+          <div class="status"><strong>ORDER.Status__c</strong></div>
         </div>
-        <div class="terms-block">
-          <div class="terms-title">TERMS:</div>
+        <div class="terms-block"> // ONLY SHOW TERMS-BLOCK if PDF_Stage__c = “QUOTE”
+          <div class="terms-title">TERMS:</div> 
           <div class="terms"><strong>Full Payment Due Upon<br>Order Confirmation<br>‍</strong><strong>Estimate Valid For 30 Days</strong></div>
         </div>
       </div>
@@ -458,45 +457,45 @@ img {
         <div class="qty title">QTY</div>
         <div class="subtotal title">TOTAL</div>
       </div>
-      <div class="grid grid line-1"><img src="https://cdn.shopify.com/s/files/1/0611/7398/9619/files/placeholder-image.png?v=1652058180">
-        <div class="sku">SKU</div>
-        <div class="name">NAME</div>
-        <div class="size">SIZE</div>
-        <div class="frame">FRAME</div>
-        <div class="sidemark">SIDEMARK</div>
-        <div class="price-unit">PRICE/UNIT</div>
-        <div class="qty">QTY</div>
-        <div class="subtotal">TOTAL</div>
+      <div class="grid grid line-1"><img src="ORDER.LINEITEM.Image__c">
+        <div class="sku">ORDER.LINEITEM.SKU__c</div>
+        <div class="name">ORDER.LINEITEM.Title__c</div>
+        <div class="size">ORDER.LINEITEM.Size__c&” (“&ORDER.LINEITEM.Dimensions__c&”)”</div>
+        <div class="frame">ORDER.LINEITEM.Frame__c</div>
+        <div class="sidemark">ORDER.LINEITEM.Sidemark__c</div>
+        <div class="price-unit">ORDER.LINEITEM.Disoucnt_Price__c</div>
+        <div class="qty">ORDER.LINEITEM.Quantity__c</div>
+        <div class="subtotal">ORDER.LINEITEM.Subtotal__c</div>
       </div>
-      <div class="grid grid line-2"><img src="https://cdn.shopify.com/s/files/1/0611/7398/9619/files/placeholder-image.png?v=1652058180">
-        <div class="sku">SKU</div>
-        <div class="name">NAME</div>
-        <div class="size">SIZE</div>
-        <div class="frame">FRAME</div>
-        <div class="sidemark">SIDEMARK</div>
-        <div class="price-unit">PRICE/UNIT</div>
-        <div class="qty">QTY</div>
-        <div class="subtotal">TOTAL</div>
+      <div class="grid grid line-1"><img src="ORDER.LINEITEM.Image__c">
+        <div class="sku">ORDER.LINEITEM.SKU__c</div>
+        <div class="name">ORDER.LINEITEM.Title__c</div>
+        <div class="size">ORDER.LINEITEM.Size__c&” (“&ORDER.LINEITEM.Dimensions__c&”)”</div>
+        <div class="frame">ORDER.LINEITEM.Frame__c</div>
+        <div class="sidemark">ORDER.LINEITEM.Sidemark__c</div>
+        <div class="price-unit">ORDER.LINEITEM.Disoucnt_Price__c</div>
+        <div class="qty">ORDER.LINEITEM.Quantity__c</div>
+        <div class="subtotal">ORDER.LINEITEM.Subtotal__c</div>
       </div>
-      <div class="grid grid line-3"><img src="https://cdn.shopify.com/s/files/1/0611/7398/9619/files/placeholder-image.png?v=1652058180">
-        <div class="sku">SKU</div>
-        <div class="name">NAME</div>
-        <div class="size">SIZE</div>
-        <div class="frame">FRAME</div>
-        <div class="sidemark">SIDEMARK</div>
-        <div class="price-unit">PRICE/UNIT</div>
-        <div class="qty">QTY</div>
-        <div class="subtotal">TOTAL</div>
+      <div class="grid grid line-1"><img src="ORDER.LINEITEM.Image__c">
+        <div class="sku">ORDER.LINEITEM.SKU__c</div>
+        <div class="name">ORDER.LINEITEM.Title__c</div>
+        <div class="size">ORDER.LINEITEM.Size__c&” (“&ORDER.LINEITEM.Dimensions__c&”)”</div>
+        <div class="frame">ORDER.LINEITEM.Frame__c</div>
+        <div class="sidemark">ORDER.LINEITEM.Sidemark__c</div>
+        <div class="price-unit">ORDER.LINEITEM.Disoucnt_Price__c</div>
+        <div class="qty">ORDER.LINEITEM.Quantity__c</div>
+        <div class="subtotal">ORDER.LINEITEM.Subtotal__c</div>
       </div>
-      <div class="grid grid line-4"><img src="https://cdn.shopify.com/s/files/1/0611/7398/9619/files/placeholder-image.png?v=1652058180">
-        <div class="sku">SKU</div>
-        <div class="name">NAME</div>
-        <div class="size">SIZE</div>
-        <div class="frame">FRAME</div>
-        <div class="sidemark">SIDEMARK</div>
-        <div class="price-unit">PRICE/UNIT</div>
-        <div class="qty">QTY</div>
-        <div class="subtotal">TOTAL</div>
+      <<div class="grid grid line-1"><img src="ORDER.LINEITEM.Image__c">
+        <div class="sku">ORDER.LINEITEM.SKU__c</div>
+        <div class="name">ORDER.LINEITEM.Title__c</div>
+        <div class="size">ORDER.LINEITEM.Size__c&” (“&ORDER.LINEITEM.Dimensions__c&”)”</div>
+        <div class="frame">ORDER.LINEITEM.Frame__c</div>
+        <div class="sidemark">ORDER.LINEITEM.Sidemark__c</div>
+        <div class="price-unit">ORDER.LINEITEM.Disoucnt_Price__c</div>
+        <div class="qty">ORDER.LINEITEM.Quantity__c</div>
+        <div class="subtotal">ORDER.LINEITEM.Subtotal__c</div>
       </div>
       <div class="grid grid subtotal">
         <div class="empty"></div>
@@ -506,39 +505,40 @@ img {
         <div class="empty"></div>
         <div class="empty"></div>
         <div class="empty"></div>
-        <div class="qty">QTY</div>
-        <div class="subtotal">$0,000.00</div>
+        <div class="qty">ORDER.Quantity__c</div>
+        <div class="subtotal">ORDER.Lineitem_Total__c</div>
       </div>
       <div class="grid grid-hardware">
         <div class="hardware-title">Hardware:</div>
         <div class="hardware-description"> <strong class="bold-text-3">T-Lock Security Hardware</strong> </div>
         <div lass="price-unit">PRICE/UNIT</div>
-        <div class="qty">QTY</div>
-        <div class="subtotal hardware">$0,000.00</div>
+        <div class="qty">ORDER.Hardware_Qty__c</div>
+        <div class="subtotal hardware">ORDER.Hardware_Total__c</div>
       </div>
       <div class="grid grid-shipping">
         <div class="shipping-title">Shipping:</div>
         <div class="shipping-description"><strong>Freight Shipping Fee</strong></div>
         <div class="price-unit">PRICE/UNIT</div>
-        <div class="qty">QTY</div>
-        <div class="subtotal shipping">$0,000.00</div>
+        <div class="qty">ORDER.Quantity__c</div>
+        <div class="subtotal shipping">ORDER.Shipping__c</div>
       </div>
       <div class="grid grid-subtotal">
         <div class="empty"></div>
         <div class="sub-total-title">Sub-Total</div>
-        <div class="sub-total-total">$0,000.00</div>
+        <div class="sub-total-total">ORDER.Subtotal__c</div>
       </div>
       <div class="grid grid-sales-tax">
         <div  class="empty"></div>
         <div  class="sales-tax-title"><strong>Sales Tax</strong></div>
-        <div class="sales-tax-total">$0,000.00</div>
+        <div class="sales-tax-total">ORDER.Total_Sales_Tax__c</div>
       </div>
       <div class="grid grid-grand-total">
         <div class="empty"></div>
-        <div class="grand-total-title">GRAND TOTAL</div>
-        <div class="grand-total"><strong class="bold-text-4">$0,000.00</strong></div>
+        <div class="grand-total-title">GRAND TOTAL</div>
+        <div class="grand-total"><strong class="bold-text-4">ORDER.Order_Total__c</strong></div>
       </div>
     </div>
   </div>
   </body>
+</html>
 </html>
