@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Artsake Order Template</title>
+<style>
+
+
+.grid {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+  text-align: center;
+}
+
+.body {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.order-number-title {
+  display: inline-block;
+}
+
+.order-block {
+  display: inline-block;
+  margin-left: 0px;
+}
+
+.date-block {
+  display: inline-block;
+}
+
+.text-block {
+  display: inline-block;
+}
+
+.order-number {
+  display: inline-block;
+}
+
+.date-title {
+  display: inline-block;
+}
+
+.date {
+  display: inline-block;
+}
+
+.bold-text {
+  margin-left: 7px;
+}
+
+.bold-text-2 {
+  margin-left: 7px;
+}
+
+.project-name-block {
+  margin-top: 20px;
+}
+
+.discount-block {
+  margin-top: 20px;
+}
+
+.discount-title {
+  display: inline-block;
+}
+
+.discount {
+  display: inline-block;
+  margin-left: 7px;
+}
+
+.ship-date-block {
+  margin-top: 20px;
+}
+
+.tailgate {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.checkbox-label {
+  display: inline-block;
+}
+
+.dock {
+  display: inline-block;
+}
+
+.checkbox-block {
+  margin-top: 20px;
+}
+
+.status-title {
+  font-size: 18px;
+}
+
+.status {
+  color: #ef5331;
+  font-size: 16px;
+}
+
+.terms-block {
+  margin-top: 40px;
+}
+
+.grid {
+  grid-auto-flow: row;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  grid-template-areas: ".";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  font-weight: 700;
+  align-items: center;
+}
+
+.grid.title {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: #cecece;
+  font-weight: 400;
+}
+
+.grid.line-1 {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: transparent;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.grid.line-2 {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: #cecece;
+  font-size: 12px;
+}
+
+.grid.line-3 {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: transparent;
+  font-size: 12px;
+}
+
+.grid.line-4 {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: #cecece;
+  font-size: 12px;
+}
+
+.grid.line-5 {
+  background-color: transparent;
+}
+
+.grid.line-6 {
+  background-color: #cecece;
+}
+
+.grid.total {
+  margin-bottom: 19px;
+  padding-top: 5px;
+  border-top: 1px solid #000;
+  background-color: transparent;
+}
+
+.grid.subtotal {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border-top: 1px solid #000;
+  background-color: transparent;
+}
+
+.grid.hardware {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: transparent;
+}
+
+.price-unit {
+  font-weight: 700;
+}
+
+.price-unit.title {
+  font-weight: 400;
+}
+
+.qty {
+  font-weight: 700;
+}
+
+.qty.title {
+  font-weight: 400;
+}
+
+.subtotal.shipping {
+  font-weight: 700;
+}
+
+.subtotal.hardware {
+  font-weight: 700;
+}
+
+.subtotal.total {
+  font-weight: 700;
+}
+
+.grid-block {
+  margin-top: 30px;
+}
+
+.order {
+  max-width: 1024px;
+  margin: 20px;
+}
+
+.paragraph {
+  font-size: 12px;
+}
+
+.paragraph-2 {
+  font-size: 12px;
+}
+
+.columns {
+  margin-top: 20px;
+}
+
+.paragraph-3 {
+  font-size: 12px;
+}
+
+.html-embed {
+  border: 2px solid #000;
+}
+
+.div-block-2 {
+  display: block;
+}
+
+.empty {
+  width: 0px;
+  height: 0px;
+}
+
+.hardware-description {
+  overflow: hidden;
+  text-align: left;
+}
+
+.bold-text-3 {
+  overflow: visible;
+  width: 100px;
+  object-fit: fill;
+}
+
+.grid-2 {
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.grid-hardware {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  font-size: 14px;
+}
+
+.shipping-description {
+  width: auto;
+  text-align: left;
+}
+
+.grid-hardware-copy {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-columns: 1fr 6fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.grid-3 {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.grid-shipping {
+  margin-top: 5px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.grid-4 {
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-subtotal {
+  margin-top: 40px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-columns: 7fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.sub-total-title {
+  font-weight: 700;
+}
+
+.grid-sales-tax {
+  grid-auto-flow: row;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-columns: 7fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.grand-total-title {
+  border-top: 1px none #000;
+  font-weight: 700;
+}
+
+.sales-tax-total {
+  font-weight: 700;
+}
+
+.sub-total-total {
+  font-weight: 700;
+}
+
+.grid-grand-total {
+  margin-top: 20px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-columns: 7fr 1fr 1fr;
+  grid-template-rows: auto;
+  border-top: 1px none #000;
+  outline-color: #333;
+  outline-offset: 0px;
+  outline-style: none;
+  outline-width: 3px;
+  font-size: 14px;
+}
+
+
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+}
+</style>
+</head>
+<body class="order">
+  <div class="header">
+
+    <div class="logo" style="display:flex;">
+      <div class="logoleft" style="width:50%;"><img style="max-width: 90%;" src="https://cdn.shopify.com/s/files/1/0611/7398/9619/files/yourorder.png?v=1652058179"></div>
+      <div class="logoright" style="width:50%;"><img style="max-width: 85%;"src="https://cdn.shopify.com/s/files/1/0611/7398/9619/files/b2b.artsake_banner1.png?v=1652058179">
+      <div>
+        <p class="paragraph-1"><strong>Artsake Canada Inc.<br></strong>460-2400 Chemin Lucerne<br>Mont-Royal, QC H3R 2J8 </p>
+      </div>
+      <div style="width:29%; display:inline-block;">
+        <p class="paragraph-2">1 (234) 278-7253<br>B2B@artsake.com </p>
+      </div>
+      <div style="width:69%; display:inline-block;">
+        <p class="paragraph-3">GST/HST Registration No.: 791307549 RT 0001QST<br>Registration No.: 1228118547 TQ 0001 </p>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="order-block">
+      <div class="order-number-title">ORDER #:</div>
+      <div class="order-number"><strong class="bold-text">1234</strong></div>
+    </div>
+    <div class="date-block">
+      <div class="date-title">DATE:</div>
+      <div class="date"><strong class="bold-text-2">MM/DD/YYYY</strong></div>
+    </div>
+    <div class="columns" style="display:flex;">
+    <div class="column1" style="width:33%;">
+        <div class="account-block">
+          <div class="account-title">ACCOUNT:</div>
+          <div class="account-address"><strong>Contact Name<br>Business Name<br>Street Address<br>City, State, Zip/Postal<br>1 (555) 555-5555</strong></div>
+        </div>
+        <div class="project-name-block">
+          <div class="project-name-title">PROJECT NAME:</div>
+          <div><strong>Hospitality Project, Miami FL</strong></div>
+        </div>
+        <div class="discount-block">
+          <div class="discount-title">DISCOUNT TYPE:</div>
+          <div class="discount"><strong>-30%</strong></div>
+        </div>
+      </div>
+      <div class="column2" style="width:33%;">
+        <div class="shipping-block">
+          <div class="shipping-address-title">SHIPPING ADDRESS:</div>
+          <div class="shipping-address"><strong>Contact Name<br>Business Name<br>Street Address<br>City, State, Zip/Postal<br>1 (555) 555-5555</strong></div>
+        </div>
+        <div class="ship-date-block">
+          <div class="ship-date-title">SHIP DATE:</div>
+          <div class="ship-date"><strong>MM/DD/YYYY</strong></div>
+        </div>
+        <div class="checkbox-block">
+          <input type="checkbox" id="dock" name="dock" value="dock">
+         <label for="dock">DOCK</label>
+          <input type="checkbox" id="tailgate" name="tailgate" value="tailgate">
+          <label for="tailgate">TAILGATE</label>
+        </div>
+      </div>
+      <div class="column3"  style="width:33%;">
+        <div class="status-block">
+          <div class="status-title">STATUS:</div>
+          <div class="status"><strong>IN PRODUCTION</strong></div>
+        </div>
+        <div class="terms-block">
+          <div class="terms-title">TERMS:</div>
+          <div class="terms"><strong>Full Payment Due Upon<br>Order Confirmation<br>‍</strong><strong>Estimate Valid For 30 Days</strong></div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-block">
+      <div class="grid grid title">
+        <div class="art title">ART</div>
+        <div iclass="sku title">SKU</div>
+        <div class="name title">NAME</div>
+        <div class="size title">SIZE</div>
+        <div class="frame-title title">FRAME</div>
+        <div class="sidemark title">SIDEMARK</div>
+        <div class="price-unit title">PRICE/UNIT</div>
+        <div class="qty title">QTY</div>
+        <div class="subtotal title">TOTAL</div>
+      </div>
+      <div class="grid grid line-1"><img src="https://cdn.shopify.com/s/files/1/0611/7398/9619/files/placeholder-image.png?v=1652058180">
+        <div class="sku">SKU</div>
+        <div class="name">NAME</div>
+        <div class="size">SIZE</div>
+        <div class="frame">FRAME</div>
+        <div class="sidemark">SIDEMARK</div>
+        <div class="price-unit">PRICE/UNIT</div>
+        <div class="qty">QTY</div>
+        <div class="subtotal">TOTAL</div>
+      </div>
+      <div class="grid grid line-2"><img src="https://cdn.shopify.com/s/files/1/0611/7398/9619/files/placeholder-image.png?v=1652058180">
+        <div class="sku">SKU</div>
+        <div class="name">NAME</div>
+        <div class="size">SIZE</div>
+        <div class="frame">FRAME</div>
+        <div class="sidemark">SIDEMARK</div>
+        <div class="price-unit">PRICE/UNIT</div>
+        <div class="qty">QTY</div>
+        <div class="subtotal">TOTAL</div>
+      </div>
+      <div class="grid grid line-3"><img src="https://cdn.shopify.com/s/files/1/0611/7398/9619/files/placeholder-image.png?v=1652058180">
+        <div class="sku">SKU</div>
+        <div class="name">NAME</div>
+        <div class="size">SIZE</div>
+        <div class="frame">FRAME</div>
+        <div class="sidemark">SIDEMARK</div>
+        <div class="price-unit">PRICE/UNIT</div>
+        <div class="qty">QTY</div>
+        <div class="subtotal">TOTAL</div>
+      </div>
+      <div class="grid grid line-4"><img src="https://cdn.shopify.com/s/files/1/0611/7398/9619/files/placeholder-image.png?v=1652058180">
+        <div class="sku">SKU</div>
+        <div class="name">NAME</div>
+        <div class="size">SIZE</div>
+        <div class="frame">FRAME</div>
+        <div class="sidemark">SIDEMARK</div>
+        <div class="price-unit">PRICE/UNIT</div>
+        <div class="qty">QTY</div>
+        <div class="subtotal">TOTAL</div>
+      </div>
+      <div class="grid grid subtotal">
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div class="qty">QTY</div>
+        <div class="subtotal">$0,000.00</div>
+      </div>
+      <div class="grid grid-hardware">
+        <div class="hardware-title">Hardware:</div>
+        <div class="hardware-description"> <strong class="bold-text-3">T-Lock Security Hardware</strong> </div>
+        <div lass="price-unit">PRICE/UNIT</div>
+        <div class="qty">QTY</div>
+        <div class="subtotal hardware">$0,000.00</div>
+      </div>
+      <div class="grid grid-shipping">
+        <div class="shipping-title">Shipping:</div>
+        <div class="shipping-description"><strong>Freight Shipping Fee</strong></div>
+        <div class="price-unit">PRICE/UNIT</div>
+        <div class="qty">QTY</div>
+        <div class="subtotal shipping">$0,000.00</div>
+      </div>
+      <div class="grid grid-subtotal">
+        <div class="empty"></div>
+        <div class="sub-total-title">Sub-Total</div>
+        <div class="sub-total-total">$0,000.00</div>
+      </div>
+      <div class="grid grid-sales-tax">
+        <div  class="empty"></div>
+        <div  class="sales-tax-title"><strong>Sales Tax</strong></div>
+        <div class="sales-tax-total">$0,000.00</div>
+      </div>
+      <div class="grid grid-grand-total">
+        <div class="empty"></div>
+        <div class="grand-total-title">GRAND TOTAL</div>
+        <div class="grand-total"><strong class="bold-text-4">$0,000.00</strong></div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
