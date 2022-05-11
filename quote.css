@@ -214,7 +214,8 @@
 
 .order {
   max-width: 1024px;
-  margin: 20px;
+  margin: auto;
+  padding: 20px;
 }
 
 .paragraph {
@@ -348,6 +349,7 @@
   outline-style: none;
   outline-width: 3px;
   font-size: 14px;
+  margin-bottom:30px;
 }
 
 
@@ -367,4 +369,5 @@ img {
   max-width: 100%;
   vertical-align: middle;
   display: inline-block;
+  object-fit: contain;
 }
