@@ -370,4 +370,5 @@ img {
   vertical-align: middle;
   display: inline-block;
   object-fit: contain;
+  height:auto!important;
 }
