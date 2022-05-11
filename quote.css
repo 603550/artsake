@@ -116,7 +116,7 @@
 .grid.title {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  background-color: #F5F5F5;
+  background-color: #CECECE;
   font-weight: 400;
 }
 
@@ -131,7 +131,7 @@
 .grid.line-2 {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  background-color: #cecece;
+  background-color: #F5F5F5;
   font-size: 12px;
 }
 
@@ -145,7 +145,7 @@
 .grid.line-4 {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  background-color: #cecece;
+  background-color: #F5F5F5;
   font-size: 12px;
 }
 
@@ -154,7 +154,7 @@
 }
 
 .grid.line-6 {
-  background-color: #cecece;
+  background-color: #F5F5F5;
 }
 
 .grid.total {
