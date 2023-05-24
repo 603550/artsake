@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>City Autocomplete</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <select id="country">
+        <option value="">Select a country</option>
+    </select>
+
+    <input type="text" id="city" placeholder="Enter city name" disabled>
+    <ul id="suggestions"></ul>
+
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "http://api.geonames.org/countryInfoJSON?username=pcimap",
+                dataType: "jsonp",
+                success: function(data) {
+                    var countries = data.geonames.map(function(country) {
+                        return "<option value='" + country.countryCode + "'>" + country.countryName + "</option>";
+                    });
+                    $("#country").append(countries.join(""));
+                }
+            });
+
+            $("#country").on("change", function() {
+                var country = $(this).val();
+                if(country) {
+                    $("#city").prop("disabled", false);
+                } else {
+                    $("#city").prop("disabled", true);
+                }
+            });
+
+            $("#city").on("input", function() {
+                var cityName = $(this).val();
+                var country = $("#country").val();
+                if(cityName && country) {
+                    $.ajax({
+                        url: `http://api.geonames.org/searchJSON?name_startsWith=${cityName}&country=${country}&cities=cities15000&username=pcimap`,
+                        dataType: "jsonp",
+                        success: function(data) {
+                            var suggestions = data.geonames.map(function(city) {
+                                return "<li>" + city.name + ", " + city.countryName + "</li>";
+                            });
+                            $("#suggestions").html(suggestions.join(""));
+                        }
+                    });
+                } else {
+                    $("#suggestions").html("");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
